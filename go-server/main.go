@@ -36,7 +36,7 @@ func (*server) Agent(srv rpx.Rippling_AgentServer) error {
     for {
       time.Sleep(5 * time.Second)
 
-      msg := rpx.Response {}
+      msg := rpx.ServerMessage {}
       if err := srv.Send(&msg); err != nil {
         fmt.Printf("agent send errored: %e\n", err);
         done <- err

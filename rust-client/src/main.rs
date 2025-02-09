@@ -35,12 +35,12 @@ async fn main() {
 async fn spawn_client(addr: &str) {
     let mut c = rippling_client::RipplingClient::connect(addr.to_owned()).await.unwrap();
 
-    let (tx, rx) = channel::<rpx::Request>(1);
+    let (tx, rx) = channel::<rpx::DeviceMessage>(1);
     let req_stream = ReceiverStream::new(rx);
 
     tokio::spawn(async move {
         loop {
-            tx.send(rpx::Request{}).await.unwrap();
+            tx.send(rpx::DeviceMessage{}).await.unwrap();
             tokio::time::sleep(std::time::Duration::from_secs(5)).await;
         }
     });
