@@ -1,4 +1,6 @@
-!/rust-client/src/rpx/.keep
-/rust-client/src/rpx/*
-/rust-client/target
-/.direnv
+rust-client/src/rpx/*
+!rust-client/src/rpx/.keep
+rust-client/target
+.direnv
+go-server/rpx/*
+!go-server/rpx/.keep
