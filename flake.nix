@@ -11,8 +11,9 @@
       devShells.default = with (pkgsFor system); mkShell {
         buildInputs = [
           rustup
-          go
           protobuf
+          protoc-gen-go
+          protoc-gen-go-grpc
         ];
       };
     }));
