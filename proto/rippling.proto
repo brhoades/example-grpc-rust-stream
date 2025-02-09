@@ -1,0 +1,14 @@
+syntax = "proto3";
+package rippling;
+option go_package = "go.rippling.com/devices/rpx";
+
+service Rippling {
+    rpc Agent(stream Request) returns (stream Response);
+}
+
+message Request {
+}
+
+message Response {
+}
+
