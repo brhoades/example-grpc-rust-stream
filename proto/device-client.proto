@@ -1,0 +1,13 @@
+syntax = "proto3";
+package device_client;
+
+service DeviceClient {
+    rpc Agent(stream Request) returns (stream Response);
+}
+
+message Request {
+}
+
+message Response {
+}
+
